@@ -1,4 +1,6 @@
-2023-06-16 13:43:15.157  INFO 14708 --- [main] mao.wordtopdf.WordToPdfApplication       : Starting WordToPdfApplication using Java 1.8.0_332 on mao with PID 14708 (D:\程序\2023Q3\wordToPDF\target\classes started by mao in D:\程序\2023Q3\wordToPDF)
-2023-06-16 13:43:15.158 DEBUG 14708 --- [main] mao.wordtopdf.WordToPdfApplication       : Running with Spring Boot v2.7.1, Spring v5.3.21
-2023-06-16 13:43:15.159  INFO 14708 --- [main] mao.wordtopdf.WordToPdfApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-06-16 13:43:15.378  INFO 14708 --- [main] mao.wordtopdf.WordToPdfApplication       : Started WordToPdfApplication in 0.405 seconds (JVM running for 0.891)
+2023-06-16 15:33:54.874  INFO 28268 --- [main] m.w.service.impl.WordServiceImpl         : out3.docx 完成
+2023-06-16 15:35:44.653  INFO 20740 --- [main] mao.wordtopdf.WordToPdfApplication       : Starting WordToPdfApplication using Java 1.8.0_332 on mao with PID 20740 (D:\程序\2023Q3\wordToPDF\target\classes started by mao in D:\程序\2023Q3\wordToPDF)
+2023-06-16 15:35:44.654 DEBUG 20740 --- [main] mao.wordtopdf.WordToPdfApplication       : Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-06-16 15:35:44.655  INFO 20740 --- [main] mao.wordtopdf.WordToPdfApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-06-16 15:35:44.866  INFO 20740 --- [main] mao.wordtopdf.WordToPdfApplication       : Started WordToPdfApplication in 0.386 seconds (JVM running for 0.784)
+2023-06-16 15:35:44.868  INFO 20740 --- [main] m.w.service.impl.WordServiceImpl         : wordConfigProp[inputPath='./', outputPath='./', wordFileName='null', pdfFileName='null']
