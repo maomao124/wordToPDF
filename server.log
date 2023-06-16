@@ -1,0 +1,4 @@
+2023-06-16 13:43:15.157  INFO 14708 --- [main] mao.wordtopdf.WordToPdfApplication       : Starting WordToPdfApplication using Java 1.8.0_332 on mao with PID 14708 (D:\程序\2023Q3\wordToPDF\target\classes started by mao in D:\程序\2023Q3\wordToPDF)
+2023-06-16 13:43:15.158 DEBUG 14708 --- [main] mao.wordtopdf.WordToPdfApplication       : Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-06-16 13:43:15.159  INFO 14708 --- [main] mao.wordtopdf.WordToPdfApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-06-16 13:43:15.378  INFO 14708 --- [main] mao.wordtopdf.WordToPdfApplication       : Started WordToPdfApplication in 0.405 seconds (JVM running for 0.891)
