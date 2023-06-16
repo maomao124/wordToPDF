@@ -13,7 +13,12 @@ import javax.annotation.Resource;
 import java.awt.*;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Project name(项目名称)：wordToPDF
@@ -40,6 +45,17 @@ public class WordServiceImpl implements WordService
     @Resource
     private wordConfigProp wordConfigProp;
 
+    /**
+     * 一个文件名，doc或者docx格式，将文件名的后缀名改为pdf
+     *
+     * @param wordFileName 字文件名称
+     * @return {@link String} pdf后缀名的文件名
+     */
+    private String fileNameWordToPdf(String wordFileName)
+    {
+        return wordFileName.substring(0, wordFileName.lastIndexOf(".")) + ".pdf";
+    }
+
     @Override
     public void toPDF(String wordFileName, String pdfFileName)
     {
@@ -53,7 +69,7 @@ public class WordServiceImpl implements WordService
         }
         if (pdfFileName == null)
         {
-            pdfFileName = wordFileName.substring(0, wordFileName.lastIndexOf(".")) + ".pdf";
+            pdfFileName = fileNameWordToPdf(wordFileName);
         }
         else
         {
@@ -67,13 +83,36 @@ public class WordServiceImpl implements WordService
         ActiveXComponent app = null;
         try
         {
+            log.debug(wordFileName + " , " + pdfFileName);
             //调用window中的程序
             app = new ActiveXComponent("Word.Application");
             //调用的时候不显示窗口
             app.setProperty("Visible", false);
             //获得所有打开的文档
             Dispatch docs = app.getProperty("Documents").toDispatch();
-            Dispatch doc = Dispatch.call(docs, "Open", new File(wordFileName).getAbsolutePath()).toDispatch();
+            Dispatch doc;
+            if (wordConfigProp.getWordFileName() == null)
+            {
+                if (wordConfigProp.isSubdirectory())
+                {
+                    doc = Dispatch.call(docs, "Open", new File(wordFileName).getAbsolutePath()).toDispatch();
+                    log.info(wordFileName + " ---> " + pdfFileName);
+                    log.info("输出路径：" + new File(pdfFileName).getAbsolutePath());
+                    //另存为，将文档保存为pdf，其中Word保存为pdf的格式宏的值是17
+                    Dispatch.call(doc, "SaveAs", new File(pdfFileName).getAbsolutePath(), 17);
+                    Dispatch.call(doc, "Close");
+                    log.info(wordFileName + " 完成");
+                    return;
+                }
+                else
+                {
+                    doc = Dispatch.call(docs, "Open", new File(wordConfigProp.getInputPath() + wordFileName).getAbsolutePath()).toDispatch();
+                }
+            }
+            else
+            {
+                doc = Dispatch.call(docs, "Open", new File(wordFileName).getAbsolutePath()).toDispatch();
+            }
             log.info(wordFileName + " ---> " + pdfFileName);
             log.info("输出路径：" + new File(pdfFileName).getAbsolutePath());
             //另存为，将文档保存为pdf，其中Word保存为pdf的格式宏的值是17
@@ -83,8 +122,9 @@ public class WordServiceImpl implements WordService
         }
         catch (Exception e)
         {
-            Toolkit.getDefaultToolkit().beep();
+            //Toolkit.getDefaultToolkit().beep();
             e.printStackTrace();
+            log.error("转pdf时发生错误：", e);
         }
         finally
         {
@@ -127,8 +167,125 @@ public class WordServiceImpl implements WordService
     }
 
     @Override
-    public void exec()
+    public void exec() throws IOException
     {
         log.info(wordConfigProp.toString());
+        if (wordConfigProp.getWordFileName() != null && wordConfigProp.getPdfFileName() != null)
+        {
+            this.toPDF(wordConfigProp.getWordFileName(), wordConfigProp.getPdfFileName());
+            return;
+        }
+        if (wordConfigProp.getWordFileName() != null)
+        {
+            this.toPDF(wordConfigProp.getWordFileName());
+            return;
+        }
+        List<String> wordFileList = new ArrayList<>();
+        if (wordConfigProp.isSubdirectory())
+        {
+            log.info("正在遍历子目录...");
+            Files.walkFileTree(Paths.get(wordConfigProp.getInputPath()), new FileVisitor<Path>()
+            {
+                /**
+                 * 访问目录之前的回调方法
+                 *
+                 * @param dir   dir
+                 * @param attrs attrs
+                 * @return {@link FileVisitResult}
+                 * @throws IOException ioexception
+                 */
+                @Override
+                public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException
+                {
+                    return FileVisitResult.CONTINUE;
+                }
+
+                /**
+                 * 访问文件
+                 *
+                 * @param file  文件
+                 * @param attrs attrs
+                 * @return {@link FileVisitResult}
+                 * @throws IOException ioexception
+                 */
+                @Override
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException
+                {
+                    File file1 = file.toFile();
+                    if (file1.getName().endsWith(".doc") || file1.getName().endsWith(".docx"))
+                    {
+                        wordFileList.add(file1.getAbsolutePath());
+                    }
+                    return FileVisitResult.CONTINUE;
+                }
+
+                /**
+                 * 访问文件失败
+                 *
+                 * @param file 文件
+                 * @param exc  exc
+                 * @return {@link FileVisitResult}
+                 * @throws IOException ioexception
+                 */
+                @Override
+                public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException
+                {
+                    log.warn("文件 " + file + " 无法访问 : " + exc.getMessage());
+                    return FileVisitResult.CONTINUE;
+                }
+
+                /**
+                 * 访问目录之后的回调方法
+                 *
+                 * @param dir dir
+                 * @param exc exc
+                 * @return {@link FileVisitResult}
+                 * @throws IOException ioexception
+                 */
+                @Override
+                public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException
+                {
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+        }
+        else
+        {
+            File file = new File(wordConfigProp.getInputPath());
+            File[] files = file.listFiles();
+            for (File file1 : files)
+            {
+                if (file1.getName().endsWith(".doc") || file1.getName().endsWith(".docx"))
+                {
+                    wordFileList.add(file1.getName());
+                }
+            }
+        }
+        log.info("一共" + wordFileList.size() + "个任务");
+        if (wordConfigProp.isSubdirectory())
+        {
+            for (String name : wordFileList)
+            {
+                this.toPDF(name, fileNameWordToPdf(name));
+            }
+        }
+        else
+        {
+            if (wordConfigProp.getOutputPath() == null)
+            {
+                for (String name : wordFileList)
+                {
+                    this.toPDF(name, wordConfigProp.getInputPath() + fileNameWordToPdf(name));
+                }
+            }
+            else
+            {
+                for (String name : wordFileList)
+                {
+                    this.toPDF(name, wordConfigProp.getOutputPath() + fileNameWordToPdf(name));
+                }
+            }
+        }
+        log.info("任务全部完成");
     }
 }

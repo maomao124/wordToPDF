@@ -1,5 +1,7 @@
 package mao.wordtopdf.service;
 
+import java.io.IOException;
+
 /**
  * Project name(项目名称)：wordToPDF
  * Package(包名): mao.wordtopdf.service
@@ -38,5 +40,5 @@ public interface WordService
     /**
      * 执行
      */
-    void exec();
+    void exec() throws IOException;
 }

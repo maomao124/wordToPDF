@@ -24,11 +24,16 @@ public class wordConfigProp
 {
     private String inputPath = "./";
 
-    private String outputPath = "./";
+    private String outputPath;
 
     private String wordFileName;
 
     private String pdfFileName;
+
+    /**
+     * inputPath中是否需要扫描子目录
+     */
+    private boolean subdirectory = false;
 
     public String getInputPath()
     {
@@ -74,6 +79,17 @@ public class wordConfigProp
         return this;
     }
 
+    public boolean isSubdirectory()
+    {
+        return subdirectory;
+    }
+
+    public wordConfigProp setSubdirectory(boolean subdirectory)
+    {
+        this.subdirectory = subdirectory;
+        return this;
+    }
+
     @Override
     public String toString()
     {
@@ -82,6 +98,7 @@ public class wordConfigProp
                 .add("outputPath='" + outputPath + "'")
                 .add("wordFileName='" + wordFileName + "'")
                 .add("pdfFileName='" + pdfFileName + "'")
+                .add("subdirectory=" + subdirectory)
                 .toString();
     }
 }

@@ -1,6 +1,81 @@
-2023-06-16 15:33:54.874  INFO 28268 --- [main] m.w.service.impl.WordServiceImpl         : out3.docx 完成
-2023-06-16 15:35:44.653  INFO 20740 --- [main] mao.wordtopdf.WordToPdfApplication       : Starting WordToPdfApplication using Java 1.8.0_332 on mao with PID 20740 (D:\程序\2023Q3\wordToPDF\target\classes started by mao in D:\程序\2023Q3\wordToPDF)
-2023-06-16 15:35:44.654 DEBUG 20740 --- [main] mao.wordtopdf.WordToPdfApplication       : Running with Spring Boot v2.7.1, Spring v5.3.21
-2023-06-16 15:35:44.655  INFO 20740 --- [main] mao.wordtopdf.WordToPdfApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-06-16 15:35:44.866  INFO 20740 --- [main] mao.wordtopdf.WordToPdfApplication       : Started WordToPdfApplication in 0.386 seconds (JVM running for 0.784)
-2023-06-16 15:35:44.868  INFO 20740 --- [main] m.w.service.impl.WordServiceImpl         : wordConfigProp[inputPath='./', outputPath='./', wordFileName='null', pdfFileName='null']
+2023-06-16 21:32:25.000 DEBUG 9748 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\短信平台管理服务.doc , C:\Users\mao\Desktop\_API\短信平台管理服务.pdf
+2023-06-16 21:32:27.667  INFO 9748 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\短信平台管理服务.doc ---> C:\Users\mao\Desktop\_API\短信平台管理服务.pdf
+2023-06-16 21:32:27.667  INFO 9748 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\短信平台管理服务.pdf
+2023-06-16 21:32:27.671 DEBUG 9748 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\认证和授权服务.doc , C:\Users\mao\Desktop\_API\认证和授权服务.pdf
+2023-06-16 21:32:29.647  INFO 9748 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\认证和授权服务.doc ---> C:\Users\mao\Desktop\_API\认证和授权服务.pdf
+2023-06-16 21:32:29.648  INFO 9748 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\认证和授权服务.pdf
+2023-06-16 21:32:29.649 DEBUG 9748 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\验证码服务.doc , C:\Users\mao\Desktop\_API\验证码服务.pdf
+2023-06-16 21:32:31.584  INFO 9748 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\验证码服务.doc ---> C:\Users\mao\Desktop\_API\验证码服务.pdf
+2023-06-16 21:32:31.584  INFO 9748 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\验证码服务.pdf
+2023-06-16 21:32:31.586  INFO 9748 --- [main] m.w.service.impl.WordServiceImpl         : 任务全部完成
+2023-06-16 21:33:02.651  INFO 33076 --- [main] mao.wordtopdf.WordToPdfApplication       : Starting WordToPdfApplication using Java 1.8.0_332 on mao with PID 33076 (D:\程序\2023Q3\wordToPDF\target\classes started by mao in D:\程序\2023Q3\wordToPDF)
+2023-06-16 21:33:02.652 DEBUG 33076 --- [main] mao.wordtopdf.WordToPdfApplication       : Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-06-16 21:33:02.652  INFO 33076 --- [main] mao.wordtopdf.WordToPdfApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-06-16 21:33:02.858  INFO 33076 --- [main] mao.wordtopdf.WordToPdfApplication       : Started WordToPdfApplication in 0.381 seconds (JVM running for 0.793)
+2023-06-16 21:33:02.859  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : wordConfigProp[inputPath='C:\Users\mao\Desktop\_API', outputPath='null', wordFileName='null', pdfFileName='null', subdirectory=true]
+2023-06-16 21:33:02.859  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 正在遍历子目录...
+2023-06-16 21:33:02.861  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 一共13个任务
+2023-06-16 21:33:02.861 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\auth-server\公共模块.doc , C:\Users\mao\Desktop\_API\auth-server\公共模块.pdf
+2023-06-16 21:33:04.969  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\auth-server\公共模块.doc ---> C:\Users\mao\Desktop\_API\auth-server\公共模块.pdf
+2023-06-16 21:33:04.969  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\auth-server\公共模块.pdf
+2023-06-16 21:33:06.975  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\auth-server\公共模块.doc 完成
+2023-06-16 21:33:06.976 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\auth-server\权限模块.doc , C:\Users\mao\Desktop\_API\auth-server\权限模块.pdf
+2023-06-16 21:33:09.454  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\auth-server\权限模块.doc ---> C:\Users\mao\Desktop\_API\auth-server\权限模块.pdf
+2023-06-16 21:33:09.454  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\auth-server\权限模块.pdf
+2023-06-16 21:33:15.488  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\auth-server\权限模块.doc 完成
+2023-06-16 21:33:15.489 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\auth-server\组织岗位模块.doc , C:\Users\mao\Desktop\_API\auth-server\组织岗位模块.pdf
+2023-06-16 21:33:17.640  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\auth-server\组织岗位模块.doc ---> C:\Users\mao\Desktop\_API\auth-server\组织岗位模块.pdf
+2023-06-16 21:33:17.640  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\auth-server\组织岗位模块.pdf
+2023-06-16 21:33:19.421  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\auth-server\组织岗位模块.doc 完成
+2023-06-16 21:33:19.422 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\交易服务.doc , C:\Users\mao\Desktop\_API\交易服务.pdf
+2023-06-16 21:33:21.570  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\交易服务.doc ---> C:\Users\mao\Desktop\_API\交易服务.pdf
+2023-06-16 21:33:21.571  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\交易服务.pdf
+2023-06-16 21:33:24.241  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\交易服务.doc 完成
+2023-06-16 21:33:24.243 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\商户平台应用.doc , C:\Users\mao\Desktop\_API\商户平台应用.pdf
+2023-06-16 21:33:26.436  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\商户平台应用.doc ---> C:\Users\mao\Desktop\_API\商户平台应用.pdf
+2023-06-16 21:33:26.436  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\商户平台应用.pdf
+2023-06-16 21:33:29.303  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\商户平台应用.doc 完成
+2023-06-16 21:33:29.303 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\商户服务.doc , C:\Users\mao\Desktop\_API\商户服务.pdf
+2023-06-16 21:33:31.513  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\商户服务.doc ---> C:\Users\mao\Desktop\_API\商户服务.pdf
+2023-06-16 21:33:31.513  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\商户服务.pdf
+2023-06-16 21:33:34.565  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\商户服务.doc 完成
+2023-06-16 21:33:34.565 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\支付渠道代理服务.doc , C:\Users\mao\Desktop\_API\支付渠道代理服务.pdf
+2023-06-16 21:33:36.566  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\支付渠道代理服务.doc ---> C:\Users\mao\Desktop\_API\支付渠道代理服务.pdf
+2023-06-16 21:33:36.567  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\支付渠道代理服务.pdf
+2023-06-16 21:33:37.271  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\支付渠道代理服务.doc 完成
+2023-06-16 21:33:37.271 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\日志服务.doc , C:\Users\mao\Desktop\_API\日志服务.pdf
+2023-06-16 21:33:39.334  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\日志服务.doc ---> C:\Users\mao\Desktop\_API\日志服务.pdf
+2023-06-16 21:33:39.334  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\日志服务.pdf
+2023-06-16 21:33:40.980  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\日志服务.doc 完成
+2023-06-16 21:33:40.981 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\用户服务.doc , C:\Users\mao\Desktop\_API\用户服务.pdf
+2023-06-16 21:33:43.815  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\用户服务.doc ---> C:\Users\mao\Desktop\_API\用户服务.pdf
+2023-06-16 21:33:43.815  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\用户服务.pdf
+2023-06-16 21:33:53.952  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\用户服务.doc 完成
+2023-06-16 21:33:53.953 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\短信发送服务.doc , C:\Users\mao\Desktop\_API\短信发送服务.pdf
+2023-06-16 21:33:55.915  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\短信发送服务.doc ---> C:\Users\mao\Desktop\_API\短信发送服务.pdf
+2023-06-16 21:33:55.915  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\短信发送服务.pdf
+2023-06-16 21:33:56.290  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\短信发送服务.doc 完成
+2023-06-16 21:33:56.291 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\短信平台管理服务.doc , C:\Users\mao\Desktop\_API\短信平台管理服务.pdf
+2023-06-16 21:33:58.915  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\短信平台管理服务.doc ---> C:\Users\mao\Desktop\_API\短信平台管理服务.pdf
+2023-06-16 21:33:58.916  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\短信平台管理服务.pdf
+2023-06-16 21:34:06.784  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\短信平台管理服务.doc 完成
+2023-06-16 21:34:06.785 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\认证和授权服务.doc , C:\Users\mao\Desktop\_API\认证和授权服务.pdf
+2023-06-16 21:34:08.775  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\认证和授权服务.doc ---> C:\Users\mao\Desktop\_API\认证和授权服务.pdf
+2023-06-16 21:34:08.775  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\认证和授权服务.pdf
+2023-06-16 21:34:09.466  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\认证和授权服务.doc 完成
+2023-06-16 21:34:09.467 DEBUG 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\验证码服务.doc , C:\Users\mao\Desktop\_API\验证码服务.pdf
+2023-06-16 21:34:11.408  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\验证码服务.doc ---> C:\Users\mao\Desktop\_API\验证码服务.pdf
+2023-06-16 21:34:11.408  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：C:\Users\mao\Desktop\_API\验证码服务.pdf
+2023-06-16 21:34:11.885  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : C:\Users\mao\Desktop\_API\验证码服务.doc 完成
+2023-06-16 21:34:11.886  INFO 33076 --- [main] m.w.service.impl.WordServiceImpl         : 任务全部完成
+2023-06-16 22:40:05.123  INFO 21868 --- [main] mao.wordtopdf.WordToPdfApplication       : Starting WordToPdfApplication v0.0.1-SNAPSHOT using Java 16.0.2 on mao with PID 21868 (D:\程序\2023Q3\wordToPDF\wordToPDF.jar started by mao in D:\程序\2023Q3\wordToPDF)
+2023-06-16 22:40:05.125 DEBUG 21868 --- [main] mao.wordtopdf.WordToPdfApplication       : Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-06-16 22:40:05.126  INFO 21868 --- [main] mao.wordtopdf.WordToPdfApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-06-16 22:40:05.404  INFO 21868 --- [main] mao.wordtopdf.WordToPdfApplication       : Started WordToPdfApplication in 0.629 seconds (JVM running for 0.85)
+2023-06-16 22:40:05.407  INFO 21868 --- [main] m.w.service.impl.WordServiceImpl         : wordConfigProp[inputPath='./', outputPath='null', wordFileName='null', pdfFileName='null', subdirectory=false]
+2023-06-16 22:40:05.407  INFO 21868 --- [main] m.w.service.impl.WordServiceImpl         : 一共2个任务
+2023-06-16 22:40:05.407 DEBUG 21868 --- [main] m.w.service.impl.WordServiceImpl         : out2.doc , ./out2.pdf
+2023-06-16 22:40:07.513  INFO 21868 --- [main] m.w.service.impl.WordServiceImpl         : out2.doc ---> ./out2.pdf
+2023-06-16 22:40:07.514  INFO 21868 --- [main] m.w.service.impl.WordServiceImpl         : 输出路径：D:\程序\2023Q3\wordToPDF\.\out2.pdf
+2023-06-16 22:40:08.622  INFO 21868 --- [main] m.w.service.impl.WordServiceImpl         : out2.doc 完成
+2023-06-16 22:40:08.624 DEBUG 21868 --- [main] m.w.service.impl.WordServiceImpl         : out3.docx , ./out3.pdf
